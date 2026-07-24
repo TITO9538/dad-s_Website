@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./src/output.css" rel="stylesheet" />
+    <title>Document</title>
+  </head>
+  <body class="bg-neutral-900">
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-50 bg-neutral-950/70 backdrop-blur-md border-b border-white/5">
+      <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+        <!-- Logo + Texto -->
+        <a href="#" class="flex items-center gap-3">
+          <!-- Icono llave -->
+          <span
+            class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-red-600 shadow-lg shadow-red-600/20">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="h-5 w-5">
+              <path
+                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+            </svg>
+          </span>
+
+          <div class="leading-tight">
+            <p class="text-xl sm:text-2xl font-extrabold tracking-tight">
+              <span class="text-white">FIERROS</span>
+              <span class="text-red-500">ZTE</span>
+            </p>
+            <p
+              class="text-[11px] sm:text-xs font-medium tracking-[0.25em] text-yellow-500 uppercase">
+              Taller Mecánico
+            </p>
+          </div>
+        </a>
+
+        <!-- Menu -->
+        <div class="hidden md:flex w-80 items-center justify-between text-white text-sm">
+            <p class="cursor-pointer hover:text-gray-400">Inicio</p>
+            <p class="cursor-pointer text-amber-500 hover:text-amber-700">Acerca de Nosotros</p>
+            <button class="cursor-pointer p-1 px-3 rounded-2xl bg-red-800 hover:bg-red-950">Contactanos</button>
+        </div>
+
+        <!-- Botón hamburguesa -->
+        <button
+          id="menu-btn"
+          type="button"
+          class="relative h-8 w-8 text-white/90 hover:text-white transition-colors md:hidden"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+          aria-controls="mobile-menu">
+          <!-- Icono hamburguesa -->
+          <svg
+            id="icon-open"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-7 w-7 absolute inset-0 m-auto transition-all duration-300">
+            <line x1="4" y1="7" x2="20" y2="7" />
+            <line x1="4" y1="12" x2="20" y2="12" />
+            <line x1="4" y1="17" x2="20" y2="17" />
+          </svg>
+          <!-- Icono cerrar (X) -->
+          <svg
+            id="icon-close"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-7 w-7 absolute inset-0 m-auto opacity-0 scale-75 rotate-45 transition-all duration-300">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </nav>
+
+      <!-- Menú desplegable: fuera del <nav>, dentro del <header> -->
+      <div
+        id="mobile-menu"
+        class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-in-out">
+        <div class="overflow-hidden">
+          <nav class="border-t border-white/5 px-6 py-4 flex flex-col gap-1">
+            <a
+              href="#inicio"
+              class="rounded-lg px-4 py-3 text-white/90 font-medium hover:bg-white/5 hover:text-red-500 transition-colors">
+              Inicio
+            </a>
+            <a
+              href="#acerca"
+              class="rounded-lg px-4 py-3 text-white/90 font-medium hover:bg-white/5 hover:text-red-500 transition-colors">
+              Acerca de nosotros
+            </a>
+            <a
+              href="#contacto"
+              class="rounded-lg px-4 py-3 bg-red-600 text-white font-semibold text-center hover:bg-red-700 transition-colors">
+              Contáctanos
+            </a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <div class="flex items-center justify-center">
+      <img
+        src="./Título.jpg"
+        alt="Descripción de la imagen"
+        class="md:w-full md:h-fit lg:w-[900px] object-cover" />
+    </div>
+
+    <!-- Contenido de relleno para probar el efecto sticky al hacer scroll -->
+    <main class="px-6 py-20 max-w-3xl mx-auto text-neutral-300 space-y-6">
+      <h1 class="text-3xl font-bold text-white">Contenido de ejemplo</h1>
+      <p>
+        Desplázate hacia abajo para ver cómo el nav se mantiene fijo arriba con el fondo oscuro
+        difuminado.
+      </p>
+      <div class="h-[1200px] rounded-xl bg-neutral-900/40 border border-white/5"></div>
+    </main>
+
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const iconOpen = document.getElementById("icon-open");
+      const iconClose = document.getElementById("icon-close");
+
+      menuBtn.addEventListener("click", () => {
+        const isOpen = mobileMenu.classList.toggle("grid-rows-[1fr]");
+        mobileMenu.classList.toggle("grid-rows-[0fr]", !isOpen);
+
+        menuBtn.setAttribute("aria-expanded", isOpen);
+
+        iconOpen.classList.toggle("opacity-0", isOpen);
+        iconOpen.classList.toggle("scale-75", isOpen);
+        iconOpen.classList.toggle("rotate-45", isOpen);
+
+        iconClose.classList.toggle("opacity-0", !isOpen);
+        iconClose.classList.toggle("scale-75", !isOpen);
+        iconClose.classList.toggle("rotate-45", !isOpen);
+      });
+
+      // Cierra el menú al tocar un link
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("grid-rows-[0fr]");
+          mobileMenu.classList.remove("grid-rows-[1fr]");
+          menuBtn.setAttribute("aria-expanded", "false");
+          iconOpen.classList.remove("opacity-0", "scale-75", "rotate-45");
+          iconClose.classList.add("opacity-0", "scale-75", "rotate-45");
+        });
+      });
+    </script>
+  </body>
+</html>
