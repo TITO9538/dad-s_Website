@@ -32,7 +32,7 @@
           <div class="leading-tight">
             <p class="text-xl sm:text-2xl font-extrabold tracking-tight">
               <span class="text-white">FIERROS</span>
-              <span class="text-red-500">ZTE</span>
+              <span class="text-red-500">MONZON</span>
             </p>
             <p
               class="text-[11px] sm:text-xs font-medium tracking-[0.25em] text-yellow-500 uppercase">
@@ -43,9 +43,11 @@
 
         <!-- Menu -->
         <div class="hidden md:flex w-80 items-center justify-between text-white text-sm">
-            <p class="cursor-pointer hover:text-gray-400">Inicio</p>
-            <p class="cursor-pointer text-amber-500 hover:text-amber-700">Acerca de Nosotros</p>
-            <button class="cursor-pointer p-1 px-3 rounded-2xl bg-red-800 hover:bg-red-950">Contactanos</button>
+          <p class="cursor-pointer hover:text-gray-400">Inicio</p>
+          <p class="cursor-pointer text-amber-500 hover:text-amber-700">Acerca de Nosotros</p>
+          <a href="#seccion-destino" class="cursor-pointer p-1 px-3 rounded-2xl bg-red-800 hover:bg-red-950">
+            Contactanos
+          </a>
         </div>
 
         <!-- Botón hamburguesa -->
@@ -105,7 +107,7 @@
               Acerca de nosotros
             </a>
             <a
-              href="#contacto"
+              href="#seccion-destino"
               class="rounded-lg px-4 py-3 bg-red-600 text-white font-semibold text-center hover:bg-red-700 transition-colors">
               Contáctanos
             </a>
@@ -114,11 +116,12 @@
       </div>
     </header>
 
-    <div class="flex items-center justify-center">
+    <!-- Imagen header -->
+    <div class="flex items-center justify-center w-full bg-black">
       <img
-        src="./Título.jpg"
+        src="./ServicioAutomotriz.jpg"
         alt="Descripción de la imagen"
-        class="md:w-full md:h-fit lg:w-[900px] object-cover" />
+        class="md:h-fit lg:w-[800px] object-cover" />
     </div>
 
     <!-- Contenido de relleno para probar el efecto sticky al hacer scroll -->
@@ -130,6 +133,52 @@
       </p>
       <div class="h-[1200px] rounded-xl bg-neutral-900/40 border border-white/5"></div>
     </main>
+    <footer>
+      <!-- Contactanos Seccion -->
+      <div class="text-white" id="seccion-destino">
+        <form class="max-w-sm mx-auto">
+          <div class="mb-5">
+            <label for="email" class="block mb-2.5 text-sm font-medium text-heading"
+              >Correo Electronico</label
+            >
+            <input
+              type="email"
+              id="email"
+              class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+              placeholder="name@flowbite.com"
+              required />
+          </div>
+          <div class="mb-5">
+            <label for="password" class="block mb-2.5 text-sm font-medium text-heading"
+              >Mensaje</label
+            >
+            <input
+              type="password"
+              id="password"
+              class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+              placeholder="escribe un mensaje relacionado con "
+              required />
+          </div>
+          <label for="remember" class="flex items-center mb-5">
+            <input
+              id="remember"
+              type="checkbox"
+              value=""
+              class="w-4 h-4 border border-default-medium rounded-xs bg-neutral-secondary-medium focus:ring-2 focus:ring-brand-soft"
+              required />
+            <p class="ms-2 text-sm font-medium text-heading select-none">
+              I agree with the
+              <a href="#" class="text-fg-brand hover:underline">terms and conditions</a>.
+            </p>
+          </label>
+          <button
+            type="submit"
+            class="text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">
+            Submit
+          </button>
+        </form>
+      </div>
+    </footer>
 
     <script>
       const menuBtn = document.getElementById("menu-btn");
