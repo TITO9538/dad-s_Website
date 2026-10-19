@@ -1,182 +1,213 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Mecánica Monzón: taller mecánico. Service, frenos, suspensión, diagnóstico con scanner y más." />
     <link href="./src/output.css" rel="stylesheet" />
-    <title>Document</title>
+    <title>Mecánica Monzón | Taller Mecánico</title>
   </head>
-  <body class="bg-neutral-900">
+  <body class="bg-neutral-900 text-neutral-300 antialiased">
     <!-- NAVBAR -->
-    <header class="sticky top-0 z-50 bg-neutral-950/70 backdrop-blur-md border-b border-white/5">
-      <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+    <header class="sticky top-0 z-50 border-b border-white/5 bg-neutral-950/70 backdrop-blur-md">
+      <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 sm:py-4">
         <!-- Logo + Texto -->
-        <a href="#" class="flex items-center gap-3">
-          <!-- Icono llave -->
-          <span
-            class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-red-600 shadow-lg shadow-red-600/20">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="white"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="h-5 w-5">
-              <path
-                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+        <a href="#inicio" class="flex items-center gap-3">
+          <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-red-600 shadow-lg shadow-red-600/20">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5" aria-hidden="true">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
             </svg>
           </span>
-
           <div class="leading-tight">
-            <p class="text-xl sm:text-2xl font-extrabold tracking-tight">
+            <p class="text-lg font-extrabold tracking-tight sm:text-2xl">
               <span class="text-white">MECANICA</span>
               <span class="text-red-500">MONZON</span>
             </p>
-            <p
-              class="text-[11px] sm:text-xs font-medium tracking-[0.25em] text-yellow-500 uppercase">
-              Taller Mecánico
-            </p>
+            <p class="text-[10px] font-medium uppercase tracking-[0.25em] text-yellow-500 sm:text-xs">Taller Mecánico</p>
           </div>
         </a>
 
-        <!-- Menu -->
-        <div class="hidden md:flex w-80 items-center justify-between text-white text-sm">
-          <p class="cursor-pointer hover:text-gray-400">Inicio</p>
-          <p class="cursor-pointer text-amber-500 hover:text-amber-700">Acerca de Nosotros</p>
-          <a href="#seccion-destino" class="cursor-pointer p-1 px-3 rounded-2xl bg-red-800 hover:bg-red-950">
-            Contactanos
-          </a>
+        <!-- Menú escritorio -->
+        <div class="hidden items-center gap-8 text-sm text-white md:flex">
+          <a href="#inicio" class="hover:text-neutral-400">Inicio</a>
+          <a href="#servicios" class="hover:text-neutral-400">Servicios</a>
+          <a href="#acerca" class="text-amber-500 hover:text-amber-600">Acerca de nosotros</a>
+          <a href="#contacto" class="rounded-full bg-red-700 px-4 py-1.5 font-medium hover:bg-red-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500">Contactanos</a>
         </div>
 
         <!-- Botón hamburguesa -->
-        <button
-          id="menu-btn"
-          type="button"
-          class="relative h-8 w-8 text-white/90 hover:text-white transition-colors md:hidden"
-          aria-label="Abrir menú"
-          aria-expanded="false"
-          aria-controls="mobile-menu">
-          <!-- Icono hamburguesa -->
-          <svg
-            id="icon-open"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="h-7 w-7 absolute inset-0 m-auto transition-all duration-300">
-            <line x1="4" y1="7" x2="20" y2="7" />
-            <line x1="4" y1="12" x2="20" y2="12" />
-            <line x1="4" y1="17" x2="20" y2="17" />
+        <button id="menu-btn" type="button" class="relative h-10 w-10 text-white/90 transition-colors hover:text-white md:hidden" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+          <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute inset-0 m-auto h-7 w-7 transition-all duration-300" aria-hidden="true">
+            <line x1="4" y1="7" x2="20" y2="7" /><line x1="4" y1="12" x2="20" y2="12" /><line x1="4" y1="17" x2="20" y2="17" />
           </svg>
-          <!-- Icono cerrar (X) -->
-          <svg
-            id="icon-close"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="h-7 w-7 absolute inset-0 m-auto opacity-0 scale-75 rotate-45 transition-all duration-300">
-            <line x1="18" y1="6" x2="6" y2="18" />
-            <line x1="6" y1="6" x2="18" y2="18" />
+          <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute inset-0 m-auto h-7 w-7 rotate-45 scale-75 opacity-0 transition-all duration-300" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
           </svg>
         </button>
       </nav>
 
-      <!-- Menú desplegable: fuera del <nav>, dentro del <header> -->
-      <div
-        id="mobile-menu"
-        class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-in-out">
+      <!-- Menú móvil -->
+      <div id="mobile-menu" class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-in-out md:hidden">
         <div class="overflow-hidden">
-          <nav class="border-t border-white/5 px-6 py-4 flex flex-col gap-1">
-            <a
-              href="#inicio"
-              class="rounded-lg px-4 py-3 text-white/90 font-medium hover:bg-white/5 hover:text-red-500 transition-colors">
-              Inicio
-            </a>
-            <a
-              href="#acerca"
-              class="rounded-lg px-4 py-3 text-white/90 font-medium hover:bg-white/5 hover:text-red-500 transition-colors">
-              Acerca de nosotros
-            </a>
-            <a
-              href="#seccion-destino"
-              class="rounded-lg px-4 py-3 bg-red-600 text-white font-semibold text-center hover:bg-red-700 transition-colors">
-              Contáctanos
-            </a>
-          </nav>
+          <div class="flex flex-col gap-1 border-t border-white/5 px-4 py-4 sm:px-6">
+            <a href="#inicio" class="rounded-lg px-4 py-3 font-medium text-white/90 transition-colors hover:bg-white/5 hover:text-red-500">Inicio</a>
+            <a href="#servicios" class="rounded-lg px-4 py-3 font-medium text-white/90 transition-colors hover:bg-white/5 hover:text-red-500">Servicios</a>
+            <a href="#acerca" class="rounded-lg px-4 py-3 font-medium text-white/90 transition-colors hover:bg-white/5 hover:text-red-500">Acerca de nosotros</a>
+            <a href="#contacto" class="rounded-lg bg-red-600 px-4 py-3 text-center font-semibold text-white transition-colors hover:bg-red-700">Contactanos</a>
+          </div>
         </div>
       </div>
     </header>
 
-    <!-- Imagen header -->
-    <div class="flex items-center justify-center w-full bg-black">
-      <img
-        src="./ServicioAutomotriz2.jpg"
-        alt="Descripción de la imagen"
-        class="md:h-fit lg:w-[800px] object-cover" />
-    </div>
+    <main>
+      <!-- HERO -->
+      <section id="inicio" class="relative isolate scroll-mt-20 overflow-hidden bg-black pt-20">
+        <img
+          src="./ServicioAutomotriz2.jpg"
+          alt="Mecánico trabajando en un vehículo en el taller"
+          class="absolute inset-0 -z-20 h-full w-full object-cover" />
+        <div class="mx-auto flex min-h-[70vh] max-w-7xl items-center px-4 py-16 sm:px-6 md:min-h-[78vh]">
+          <div class="max-w-xl">
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a href="https://wa.me/5491161260611" class="rounded-lg bg-red-600 px-6 py-3 text-center font-semibold text-white shadow-lg shadow-red-600/20 hover:bg-red-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-400">Pedir turno por WhatsApp</a>
+              <a href="#servicios" class="rounded-lg border border-white/30 px-6 py-3 text-center font-semibold text-white hover:bg-white/10">Ver servicios</a>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    <!-- Contenido de relleno para probar el efecto sticky al hacer scroll -->
-    <main class="px-6 py-20 max-w-3xl mx-auto text-neutral-300 space-y-6">
-      <h1 class="text-3xl font-bold text-white">Contenido de ejemplo</h1>
-      <p>
-        Desplázate hacia abajo para ver cómo el nav se mantiene fijo arriba con el fondo oscuro
-        difuminado.
-      </p>
-      <div class="h-[1200px] rounded-xl bg-neutral-900/40 border border-white/5"></div>
-    </main>
-    <footer>
-      <!-- Contactanos Seccion -->
-      <div class="text-white" id="seccion-destino">
-        <form class="max-w-sm mx-auto">
-          <div class="mb-5">
-            <label for="email" class="block mb-2.5 text-sm font-medium text-heading"
-              >Telefono</label
-            >
-            <input
-              type="phone"
-              id="email"
-              class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
-              placeholder="name@flowbite.com"
-              required />
-          </div>
-          <div class="mb-5">
-            <label for="password" class="block mb-2.5 text-sm font-medium text-heading"
-              >Mensaje</label
-            >
-            <input
-              type="password"
-              id="password"
-              class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
-              placeholder="escribe un mensaje relacionado con "
-              required />
-          </div>
-          <label for="remember" class="flex items-center mb-5">
-            <input
-              id="remember"
-              type="checkbox"
-              value=""
-              class="w-4 h-4 border border-default-medium rounded-xs bg-neutral-secondary-medium focus:ring-2 focus:ring-brand-soft"
-              required />
-            <p class="ms-2 text-sm font-medium text-heading select-none">
-              I agree with the
-              <a href="#" class="text-fg-brand hover:underline">terms and conditions</a>.
+      <!-- SERVICIOS -->
+      <section id="servicios" class="mx-auto max-w-7xl scroll-mt-20 px-4 py-16 sm:px-6 md:py-24">
+        <h2 class="text-3xl font-bold text-white sm:text-4xl">Servicios</h2>
+        <p class="mt-3 max-w-2xl">Todo lo que tu auto necesita para andar seguro, en un solo taller.</p>
+
+        <div class="mt-10 grid gap-px overflow-hidden rounded-xl border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="bg-neutral-900 p-6">
+            <h3 class="text-lg font-semibold text-white"><span class="mr-2 text-red-500">▍</span>Service completo</h3>
+            <p class="mt-2 text-sm">Cambio de aceite y filtros, bujías, correas y control de niveles según el plan de tu fabricante.</p>
+          </article>
+          <article class="bg-neutral-900 p-6">
+            <h3 class="text-lg font-semibold text-white"><span class="mr-2 text-red-500">▍</span>Frenos</h3>
+            <p class="mt-2 text-sm">Cambio de pastillas, discos, tambores y líquido de frenos. Revisión completa del sistema.</p>
+          </article>
+          <article class="bg-neutral-900 p-6">
+            <h3 class="text-lg font-semibold text-white"><span class="mr-2 text-red-500">▍</span>Suspensión y dirección</h3>
+            <p class="mt-2 text-sm">Amortiguadores, rótulas, bujes y extremos. Si el auto golpea o se va de costado, lo resolvemos.</p>
+          </article>
+          <article class="bg-neutral-900 p-6">
+            <h3 class="text-lg font-semibold text-white"><span class="mr-2 text-red-500">▍</span>Diagnóstico con scanner</h3>
+            <p class="mt-2 text-sm">Leemos los códigos de falla para encontrar el problema sin adivinar ni cambiar piezas de más.</p>
+          </article>
+          <article class="bg-neutral-900 p-6">
+            <h3 class="text-lg font-semibold text-white"><span class="mr-2 text-red-500">▍</span>Motor</h3>
+            <p class="mt-2 text-sm">Reparaciones de motor, distribución, pérdidas de aceite, recalentamiento y refrigeración.</p>
+          </article>
+          <article class="bg-neutral-900 p-6">
+            <h3 class="text-lg font-semibold text-white"><span class="mr-2 text-red-500">▍</span>Embrague y caja</h3>
+            <p class="mt-2 text-sm">Cambio de kit de embrague y reparación de cajas manuales. Revisión de transmisión.</p>
+          </article>
+          <article class="bg-neutral-900 p-6">
+            <h3 class="text-lg font-semibold text-white"><span class="mr-2 text-red-500">▍</span>Alineación y balanceo</h3>
+            <p class="mt-2 text-sm">Para que el auto no vibre, no se desvíe y las cubiertas duren más.</p>
+          </article>
+          <article class="bg-neutral-900 p-6">
+            <h3 class="text-lg font-semibold text-white"><span class="mr-2 text-red-500">▍</span>Electricidad y batería</h3>
+            <p class="mt-2 text-sm">Arranque, alternador, luces, batería y fallas eléctricas que aparecen y desaparecen.</p>
+          </article>
+          <article class="bg-neutral-900 p-6">
+            <h3 class="text-lg font-semibold text-white"><span class="mr-2 text-red-500">▍</span>Aire acondicionado</h3>
+            <p class="mt-2 text-sm">Carga de gas, detección de pérdidas y reparación para que el aire enfríe como el primer día.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ACERCA -->
+      <section id="acerca" class="scroll-mt-20 border-y border-white/5 bg-neutral-950 py-16 md:py-24">
+        <div class="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-2">
+          <div>
+            <h2 class="text-3xl font-bold text-white sm:text-4xl">Acerca de nosotros</h2>
+            <p class="mt-4">
+              En Mecánica Monzón trabajamos con una idea simple: que sepas qué le pasa a tu auto y por qué cuesta lo que cuesta. Revisamos, te mostramos el problema y recién después de tu aprobación empezamos.
             </p>
-          </label>
-          <button
-            type="submit"
-            class="text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">
-            Submit
-          </button>
-        </form>
+            <p class="mt-4">
+              Usamos repuestos de calidad, herramientas de diagnóstico actuales y damos garantía por escrito en cada trabajo.
+            </p>
+            <ul class="mt-6 space-y-3 text-white">
+              <li class="flex gap-3"><span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-red-500"></span>Presupuesto claro antes de empezar</li>
+              <li class="flex gap-3"><span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-red-500"></span>Te devolvemos los repuestos cambiados si querés verlos</li>
+              <li class="flex gap-3"><span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-red-500"></span>Garantía en repuestos y mano de obra</li>
+              <li class="flex gap-3"><span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-red-500"></span>Atendemos autos nacionales e importados</li>
+            </ul>
+          </div>
+
+          <div class="self-start rounded-xl border border-white/10 bg-neutral-900 p-6 sm:p-8">
+            <h3 class="text-xl font-semibold text-white">Dónde y cuándo encontrarnos</h3>
+            <dl class="mt-5 space-y-5">
+              <div>
+                <dt class="text-sm font-medium text-yellow-500">Dirección</dt>
+                <dd class="mt-1 text-white">Calle Ejemplo 1234, Buenos Aires</dd>
+              </div>
+              <div>
+                <dt class="text-sm font-medium text-yellow-500">Horarios</dt>
+                <dd class="mt-1 text-white">Lunes a viernes de 8:00 a 18:00<br />Sábados de 8:00 a 13:00</dd>
+              </div>
+              <div>
+                <dt class="text-sm font-medium text-yellow-500">Teléfono / WhatsApp</dt>
+                <dd class="mt-1"><a href="tel:+5491100000000" class="text-white hover:text-red-400">+54 9 11 0000-0000</a></dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <!-- CONTACTO -->
+      <section id="contacto" class="mx-auto max-w-7xl scroll-mt-20 px-4 py-16 sm:px-6 md:py-24">
+        <div class="grid gap-10 lg:grid-cols-2 lg:gap-16">
+          <div>
+            <h2 class="text-3xl font-bold text-white sm:text-4xl">Pedí tu turno</h2>
+            <p class="mt-4 max-w-md">Contanos qué le pasa a tu auto y te respondemos por WhatsApp para coordinar el día y la hora.</p>
+          </div>
+
+          <form id="form-contacto" class="space-y-5">
+            <div>
+              <label for="nombre" class="mb-2 block text-sm font-medium text-white">Nombre</label>
+              <input type="text" id="nombre" name="nombre" required autocomplete="name"
+                class="block w-full rounded-lg border border-white/10 bg-neutral-800 px-3 py-2.5 text-sm text-white placeholder:text-neutral-500 focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/50"
+                placeholder="Tu nombre" />
+            </div>
+            <div>
+              <label for="telefono" class="mb-2 block text-sm font-medium text-white">Teléfono</label>
+              <input type="tel" id="telefono" name="telefono" required autocomplete="tel"
+                class="block w-full rounded-lg border border-white/10 bg-neutral-800 px-3 py-2.5 text-sm text-white placeholder:text-neutral-500 focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/50"
+                placeholder="11 2345-6789" />
+            </div>
+            <div>
+              <label for="vehiculo" class="mb-2 block text-sm font-medium text-white">Marca, modelo y año del auto</label>
+              <input type="text" id="vehiculo" name="vehiculo"
+                class="block w-full rounded-lg border border-white/10 bg-neutral-800 px-3 py-2.5 text-sm text-white placeholder:text-neutral-500 focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/50"
+                placeholder="Ej: Volkswagen Gol 2015" />
+            </div>
+            <div>
+              <label for="mensaje" class="mb-2 block text-sm font-medium text-white">¿Qué necesitás?</label>
+              <textarea id="mensaje" name="mensaje" rows="4" required
+                class="block w-full rounded-lg border border-white/10 bg-neutral-800 px-3 py-2.5 text-sm text-white placeholder:text-neutral-500 focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/50"
+                placeholder="Ej: Hace ruido al frenar y quiero un presupuesto"></textarea>
+            </div>
+            <button type="submit"
+              class="w-full rounded-lg bg-red-600 px-5 py-3 text-sm font-semibold text-white hover:bg-red-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-400 sm:w-auto">
+              Enviar por WhatsApp
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <div class="border-t border-white/5 bg-neutral-950 py-6 text-sm">
+        <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 text-center sm:flex-row sm:px-6 sm:text-left">
+          <p class="font-bold"><span class="text-white">MECANICA</span> <span class="text-red-500">MONZON</span></p>
+          <p>© <span id="year"></span> Mecánica Monzón. Todos los derechos reservados.</p>
+        </div>
       </div>
     </footer>
 
@@ -186,31 +217,39 @@
       const iconOpen = document.getElementById("icon-open");
       const iconClose = document.getElementById("icon-close");
 
-      menuBtn.addEventListener("click", () => {
-        const isOpen = mobileMenu.classList.toggle("grid-rows-[1fr]");
+      function setMenu(isOpen) {
+        mobileMenu.classList.toggle("grid-rows-[1fr]", isOpen);
         mobileMenu.classList.toggle("grid-rows-[0fr]", !isOpen);
-
         menuBtn.setAttribute("aria-expanded", isOpen);
-
         iconOpen.classList.toggle("opacity-0", isOpen);
         iconOpen.classList.toggle("scale-75", isOpen);
         iconOpen.classList.toggle("rotate-45", isOpen);
-
         iconClose.classList.toggle("opacity-0", !isOpen);
         iconClose.classList.toggle("scale-75", !isOpen);
         iconClose.classList.toggle("rotate-45", !isOpen);
+      }
+
+      menuBtn.addEventListener("click", () => {
+        setMenu(menuBtn.getAttribute("aria-expanded") !== "true");
       });
 
       // Cierra el menú al tocar un link
       mobileMenu.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-          mobileMenu.classList.add("grid-rows-[0fr]");
-          mobileMenu.classList.remove("grid-rows-[1fr]");
-          menuBtn.setAttribute("aria-expanded", "false");
-          iconOpen.classList.remove("opacity-0", "scale-75", "rotate-45");
-          iconClose.classList.add("opacity-0", "scale-75", "rotate-45");
-        });
+        link.addEventListener("click", () => setMenu(false));
       });
+
+      // Formulario -> WhatsApp
+      document.getElementById("form-contacto").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const f = e.target;
+        const texto =
+          `Hola, soy ${f.nombre.value}. Mi teléfono es ${f.telefono.value}.` +
+          (f.vehiculo.value ? ` Mi auto es: ${f.vehiculo.value}.` : "") +
+          ` ${f.mensaje.value}`;
+        window.open("https://wa.me/5491161260611?text=" + encodeURIComponent(texto), "_blank");
+      });
+
+      document.getElementById("year").textContent = new Date().getFullYear();
     </script>
   </body>
 </html>
